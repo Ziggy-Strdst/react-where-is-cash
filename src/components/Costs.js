@@ -1,14 +1,15 @@
 import CostItem from './CostItem';
+import Card from './Card';
 
 import './Costs.css';
 
 const Costs = ({ costs }) => {
   return (
-    <div className="costs">
+    <Card className="costs">
       {costs.map((cost) => (
         <CostItem cost={cost} key={cost.id} />
       ))}
-    </div>
+    </Card>
   );
 };
 
