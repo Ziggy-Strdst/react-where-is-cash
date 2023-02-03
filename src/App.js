@@ -1,4 +1,5 @@
-import CostItem from './components/CostItem';
+import Costs from './components/Costs';
+
 const costs = [
   {
     id: 1,
@@ -20,15 +21,8 @@ const costs = [
   },
 ];
 
-function App() {
-  return (
-    <div>
-      <h1>Hello React</h1>
-      {costs.map((cost) => (
-        <CostItem cost={cost} key={cost.id} />
-      ))}
-    </div>
-  );
-}
+const App = () => {
+  return <Costs costs={costs} />;
+};
 
 export default App;
