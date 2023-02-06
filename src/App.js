@@ -1,3 +1,4 @@
+import NewCost from './components/NewCost/NewCost';
 import Costs from './components/Costs/Costs';
 
 const costs = [
@@ -22,7 +23,12 @@ const costs = [
 ];
 
 const App = () => {
-  return <Costs costs={costs} />;
+  return (
+    <>
+      <NewCost />
+      <Costs costs={costs} />
+    </>
+  );
 };
 
 export default App;
