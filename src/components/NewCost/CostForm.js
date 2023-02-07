@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import './CostForm.css';
 
-const CostForm = () => {
+const CostForm = (props) => {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
@@ -23,21 +23,28 @@ const CostForm = () => {
     event.preventDefault();
 
     const costData = {
-      name: name,
+      description: name,
       amount: amount,
       date: new Date(date),
     };
+
+    props.onSavaData(costData);
+
+    setName('');
+    setAmount('');
+    setDate('');
   };
+
   return (
     <form onSubmit={submitHandler}>
       <div className="new-cost__controls">
         <div className="new-cost__control">
           <label>Название</label>
-          <input type="text" onChange={nameChangeHandler} />
+          <input type="text" onChange={nameChangeHandler} value={name} />
         </div>
         <div className="new-cost__control">
           <label>Сумма</label>
-          <input type="number" onChange={amountChangeHandler} />
+          <input type="number" onChange={amountChangeHandler} value={amount} />
         </div>
         <div className="new-cost__control">
           <label>Дата</label>
@@ -46,6 +53,7 @@ const CostForm = () => {
             min="1989-01-12"
             max="2024-24-02"
             onChange={dateChangeHandler}
+            value={date}
           />
         </div>
       </div>
