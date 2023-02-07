@@ -5,7 +5,7 @@ import { useState } from 'react';
 const INITIAL_COSTS = [
   {
     id: 1,
-    date: new Date(2020, 12, 1),
+    date: new Date(2023, 0, 2),
     description: 'Playstation 5',
     amount: 999.99,
   },
